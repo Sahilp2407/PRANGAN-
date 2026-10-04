@@ -3,7 +3,7 @@
 # 🏛️ Prāngan
 ### *Your Campus, Connected.*
 
-**A Cross-Platform Community Management Platform for Residential Societies & Campus Communities**
+**A Modern Cross-Platform Community Management Platform for Residential Societies & Campus Living**
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-3.12%2B-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
@@ -13,28 +13,54 @@
 
 <br/>
 
-> **Prāngan** (प्रांगण) — Sanskrit for *"courtyard"* — is a real-time, community-first mobile app that digitizes the communication, governance, and social fabric of residential societies and campus communities.
+> **Prāngan** (प्रांगण) — Sanskrit for *"courtyard"* or *"open gathering space"* — is a real-time, community-first mobile app that digitizes the communication, governance, events, and safety fabric of residential societies and campus communities.
 
 </div>
 
 ---
 
-## 📱 App Screenshots
+## 📱 App Walkthrough & Screenshots
 
-### Welcome · Dashboard · Community Forum
+### 1️⃣ Authentication & Resident Onboarding
 
-![Welcome, Dashboard and Community Forum screens](assets/images/screens_1.jpg)
+| 01. Splash Screen | 02. Welcome & Sign-In | 03. Join Society |
+| :---: | :---: | :---: |
+| <img src="assets/screenshots/01_splash.png" width="230" alt="Splash Screen" /> | <img src="assets/screenshots/02_welcome.png" width="230" alt="Welcome Screen" /> | <img src="assets/screenshots/03_join_society.png" width="230" alt="Join Society" /> |
+| *Custom branded crest with smooth fade transition* | *Google Sign-In & Email Authentication options* | *Search and select your campus / residential society* |
 
-### Live Polls · Events · Admin Panel
+| 04. Confirm Resident Details | 05. Pending Admin Approval |
+| :---: | :---: |
+| <img src="assets/screenshots/04_confirm_details.png" width="230" alt="Confirm Details" /> | <img src="assets/screenshots/05_pending_approval.png" width="230" alt="Pending Approval" /> |
+| *Fill wing, flat number & contact info* | *Real-time waiting screen; auto-unlocks when approved* |
 
-![Polls, Events and Admin Approval screens](assets/images/screens_2.jpg)
+---
+
+### 2️⃣ Dashboard & Community Discussions
+
+| 06. Society Dashboard | 07. Discussion Feed | 08. Create New Post | 09. Post Discussion & Comments |
+| :---: | :---: | :---: | :---: |
+| <img src="assets/screenshots/06_dashboard.png" width="220" alt="Dashboard" /> | <img src="assets/screenshots/07_discussions.png" width="220" alt="Discussions Feed" /> | <img src="assets/screenshots/08_new_post.png" width="220" alt="New Post" /> | <img src="assets/screenshots/09_post_detail.png" width="220" alt="Post Detail" /> |
+| *Society overview, quick actions & SOS alerts* | *Community issues, likes, comments & updates* | *Attach photos, add tags & broadcast issues* | *Threaded real-time comments & discussion* |
+
+---
+
+### 3️⃣ Events, Live Polls & Safety Broadcasts
+
+| 10. Upcoming Events | 11. Live Community Polls | 12. Create New Poll |
+| :---: | :---: | :---: |
+| <img src="assets/screenshots/10_events.png" width="230" alt="Events" /> | <img src="assets/screenshots/11_polls.png" width="230" alt="Live Polls" /> | <img src="assets/screenshots/12_create_poll.png" width="230" alt="Create Poll" /> |
+| *Meetings, festivals & community calendar* | *Democratic voting with live animated percentages* | *Admins can create multi-choice opinion polls* |
+
+| 13. Society Notices & Alerts | 14. Emergency SOS Broadcast | 15. Admin Approval Panel |
+| :---: | :---: | :---: |
+| <img src="assets/screenshots/13_alerts.png" width="230" alt="Alerts" /> | <img src="assets/screenshots/14_sos_broadcast.png" width="230" alt="SOS Broadcast" /> | <img src="assets/screenshots/15_admin_approvals.png" width="230" alt="Admin Approvals" /> |
+| *High-priority notices & maintenance alerts* | *Instant one-tap emergency alert broadcast* | *Admins review and approve/reject new residents* |
 
 ---
 
 ## 📑 Table of Contents
 
 - [✨ Overview](#-overview)
-- [📸 App Screens & Features](#-app-screens--features)
 - [🏗️ Architecture](#️-architecture)
 - [🗂️ Project Structure](#️-project-structure)
 - [📦 Tech Stack & Dependencies](#-tech-stack--dependencies)
@@ -50,68 +76,18 @@
 
 ## ✨ Overview
 
-**Prāngan** is a full-stack Flutter application built for **Kharghar Society** (extensible to any campus/residential community). It replaces fragmented WhatsApp groups, paper notice boards, and manual processes with a structured, role-based digital community platform.
+**Prāngan** is a full-stack Flutter application built for **Kharghar Society** (and extensible to any campus/residential community). It replaces fragmented WhatsApp groups, paper notice boards, and manual processes with a structured, role-based digital community platform.
 
 ### 🎯 Core Problems It Solves
 
 | Problem | Prāngan's Solution |
 |---|---|
 | Scattered announcements across WhatsApp groups | Centralized **Notice Board** with real-time sync |
-| Manual attendance & event tracking | Digital **Events Calendar** with RSVP |
+| Manual attendance & event tracking | Digital **Events Calendar** with RSVP & details |
 | No formal grievance system | Community **Discussion Forum** with likes & comments |
-| Slow emergency communication | One-tap **SOS Alert Broadcast** to all members |
+| Slow emergency communication | One-tap **SOS Alert Broadcast** flashing red banner |
 | No democratic decision-making tool | Live **Community Polls** with animated vote counts |
-| Manual admin approval of new residents | Role-based **Admin Approval Workflow** |
-
----
-
-## 📸 App Screens & Features
-
-### 🔐 Authentication Flow
-
-| Screen | Description |
-|---|---|
-| **Splash Screen** | Custom branded crest with smooth fade animation. Checks `FirebaseAuth` session state. |
-| **Welcome Screen** | App branding with Google Sign-In and Email/Password options. |
-| **Sign Up Screen** | New user registration with full form validation. |
-| **OTP Verification** | Phone/email verification for extra security. |
-| **Join Society Screen** | New users select their campus/society from a searchable list. |
-| **Pending Approval Screen** | Real-time waiting screen. Unlocks automatically when admin approves via Firestore stream. |
-
-### 🏠 Core Features (Post Login)
-
-#### 🖥️ Dashboard
-- Society name, banner, and quick stats at the top.
-- **Emergency Alert Banner** — flashes in high-contrast red when an SOS is active.
-- **Quick Action Buttons** — shortcuts to create posts, view events, cast votes.
-- Upcoming events strip and live poll previews.
-
-#### 💬 Discussions (Community Forum)
-- Residents can post issues, announcements, or photos.
-- Full **like** and **comment** system with real-time counts.
-- Real-time updates via Firestore `.snapshots()` streams.
-- Create posts with optional image attachments via `image_picker`.
-- Share posts via native OS share sheet using `share_plus`.
-
-#### 📅 Events
-- Society admins create events with title, description, date, and venue.
-- Residents can view upcoming and past events.
-- Beautiful card-based event listing with `intl`-formatted dates.
-
-#### 🗳️ Live Polls
-- Admin creates polls for community decisions (e.g., *"Should we add CCTV?"*).
-- Animated vote percentage bars update live as votes come in.
-- Each resident can vote once; real-time vote tallying via Firestore.
-
-#### 🚨 Alerts (SOS / Emergency Broadcast)
-- **High-priority emergency broadcast** system for security guards & management.
-- Instantly visible to all community members on the Dashboard.
-- Alert history log with timestamps and severity levels (`info`, `warning`, `sos`).
-
-#### 👤 Admin Panel
-- **Resident Approval Workflow:** View all `pending` members; approve or reject with one tap.
-- Role-based access control (RBAC): only `admin` role users see the panel.
-- Admins can create events, polls, and broadcast emergency alerts.
+| Manual admin approval of new residents | Role-based **Admin Approval Workflow** with RBAC |
 
 ---
 
@@ -170,62 +146,55 @@ prangan/
 │   ├── firebase_options.dart        # Auto-generated Firebase platform config
 │   │
 │   ├── models/                      # Pure data schemas (Dart classes)
-│   │   ├── user_model.dart
-│   │   ├── society_model.dart
-│   │   ├── post_model.dart
-│   │   ├── event_model.dart
-│   │   ├── poll_model.dart
-│   │   └── alert_model.dart
+│   │   ├── user_model.dart          # UserModel (uid, name, role, status, societyId)
+│   │   ├── society_model.dart       # SocietyModel (name, description, memberCount)
+│   │   ├── post_model.dart          # PostModel (text, imageUrl, likes, comments)
+│   │   ├── event_model.dart         # EventModel (title, date, venue, description)
+│   │   ├── poll_model.dart          # PollModel (question, options, voteMap)
+│   │   └── alert_model.dart         # AlertModel (message, severity, timestamp)
 │   │
 │   ├── services/                    # Firebase API abstraction layer
-│   │   ├── auth_service.dart
-│   │   ├── society_service.dart
-│   │   ├── post_service.dart
-│   │   ├── event_service.dart
-│   │   ├── poll_service.dart
-│   │   ├── alert_service.dart
-│   │   ├── storage_service.dart
+│   │   ├── auth_service.dart        # Google Sign-In, Email Auth, session management
+│   │   ├── society_service.dart     # Society CRUD, member approval logic
+│   │   ├── post_service.dart        # Post creation, like toggle, comment ops
+│   │   ├── event_service.dart       # Event creation and fetching
+│   │   ├── poll_service.dart        # Poll creation, vote casting
+│   │   ├── alert_service.dart       # SOS broadcast, alert history
+│   │   ├── storage_service.dart     # Firebase Storage image upload
 │   │   └── seed_service.dart        # Dev-only data seeding utility
 │   │
 │   ├── providers/                   # State management (ChangeNotifier)
-│   │   ├── auth_provider.dart
-│   │   ├── society_provider.dart
-│   │   ├── post_provider.dart
-│   │   ├── event_provider.dart
-│   │   ├── poll_provider.dart
-│   │   └── alert_provider.dart
+│   │   ├── auth_provider.dart       # Auth state, user profile, role management
+│   │   ├── society_provider.dart    # Active society state, member management
+│   │   ├── post_provider.dart       # Discussion feed state
+│   │   ├── event_provider.dart      # Events list state
+│   │   ├── poll_provider.dart       # Active polls state
+│   │   └── alert_provider.dart      # Emergency alerts state
 │   │
 │   ├── screens/
-│   │   ├── splash_screen.dart
-│   │   ├── auth/
-│   │   │   ├── welcome_screen.dart
-│   │   │   ├── signup_screen.dart
-│   │   │   └── otp_verification_screen.dart
-│   │   ├── society/
-│   │   ├── dashboard/
-│   │   ├── discussions/
-│   │   │   ├── discussion_list_screen.dart
-│   │   │   ├── new_post_screen.dart
-│   │   │   └── post_detail_screen.dart
-│   │   ├── events/
-│   │   ├── polls/
-│   │   ├── alerts/
-│   │   └── admin/
-│   │       └── admin_approvals_screen.dart
+│   │   ├── splash_screen.dart       # Entry screen with auth routing
+│   │   ├── auth/                    # Welcome, Signup, OTP Verification
+│   │   ├── society/                 # Join Society, Confirm Details, Pending Approval
+│   │   ├── dashboard/               # Main Dashboard with quick actions & alerts
+│   │   ├── discussions/             # Forum feed, New Post, Post Detail
+│   │   ├── events/                  # Events calendar & details
+│   │   ├── polls/                   # Live community voting
+│   │   ├── alerts/                  # Notice board & emergency alerts
+│   │   └── admin/                   # Member approvals & society management
 │   │
 │   ├── theme/
 │   │   └── app_theme.dart           # Centralized Material 3 theme config
-│   ├── widgets/
-│   └── utils/
+│   ├── widgets/                     # Custom reusable UI widgets (AppCrest, cards)
+│   └── utils/                       # Formatters & helper utilities
 │
 ├── assets/
-│   └── images/                      # App screenshot assets
-├── android/
-├── ios/
-├── web/
-├── firestore.rules
-├── firebase.json
-└── pubspec.yaml
+│   └── screenshots/                 # 15 App walkthrough screenshots
+├── android/                         # Android native config (minSdk 21, targetSdk 34)
+├── ios/                             # iOS native config & CocoaPods
+├── web/                             # Flutter Web runner
+├── firestore.rules                  # Firestore security rules
+├── firebase.json                    # Firebase project config
+└── pubspec.yaml                     # Dependencies manifest
 ```
 
 ---
@@ -247,7 +216,7 @@ prangan/
 | `firebase_core` | `^4.15.0` | Firebase SDK initialization for all platforms |
 | `firebase_auth` | `^6.7.0` | User authentication, session persistence, token management |
 | `cloud_firestore` | `^6.10.0` | NoSQL real-time database with offline caching |
-| `firebase_storage` | `^13.6.0` | Cloud storage for images & media files |
+| `firebase_storage` | `^13.6.0` | Cloud storage for images & media attachments |
 | `google_sign_in` | `^7.2.0` | Native Google OAuth 2.0 sign-in flow |
 
 ### State Management & UI
@@ -255,8 +224,8 @@ prangan/
 | Package | Version | Purpose |
 |---|---|---|
 | `provider` | `^6.1.5` | Reactive state management (InheritedWidget wrapper) |
-| `google_fonts` | `^8.2.1` | Outfit font family for premium typography |
-| `image_picker` | `^1.2.3` | Camera & gallery access for post images |
+| `google_fonts` | `^8.2.1` | Outfit font family for modern typography |
+| `image_picker` | `^1.2.3` | Camera & gallery access for post photos |
 
 ### Utilities
 
@@ -277,57 +246,51 @@ prangan/
 Firestore (NoSQL)
 │
 ├── users/{uid}
-│   ├── uid, name, email, photoUrl?
-│   ├── role: "resident" | "admin"
-│   ├── status: "pending" | "approved" | "rejected"
-│   └── societyId?
+│   ├── uid: String
+│   ├── name: String
+│   ├── email: String
+│   ├── photoUrl: String?
+│   ├── role: String          // "resident" | "admin"
+│   ├── status: String        // "pending" | "approved" | "rejected"
+│   └── societyId: String?
 │
 ├── societies/{societyId}
-│   ├── name, description, location
-│   ├── adminUid, memberCount
+│   ├── name: String
+│   ├── description: String
+│   ├── location: String
+│   ├── adminUid: String
+│   └── memberCount: int
 │
 ├── posts/{postId}
-│   ├── authorId, authorName, societyId
-│   ├── content, imageUrl?
-│   ├── likes: List<String>     // UIDs who liked
-│   ├── commentCount, createdAt
+│   ├── authorId: String
+│   ├── authorName: String
+│   ├── societyId: String
+│   ├── content: String
+│   ├── imageUrl: String?
+│   ├── likes: List<String>        // UIDs of users who liked
+│   ├── commentCount: int
+│   └── createdAt: Timestamp
 │
 ├── events/{eventId}
-│   ├── title, description, venue
-│   ├── date: Timestamp, societyId
+│   ├── title: String
+│   ├── description: String
+│   ├── venue: String
+│   ├── date: Timestamp
+│   └── societyId: String
 │
 ├── polls/{pollId}
-│   ├── question, options: List<String>
-│   ├── votes: Map<uid, optionIndex>
-│   └── societyId, createdAt
+│   ├── question: String
+│   ├── societyId: String
+│   ├── options: List<String>
+│   ├── votes: Map<String, String>  // { uid → optionIndex }
+│   └── createdAt: Timestamp
 │
 └── alerts/{alertId}
-    ├── message, severity: "info"|"warning"|"sos"
-    ├── societyId, createdBy, createdAt
-```
-
-### Model Serialization Pattern
-
-```dart
-// Firestore → Dart Object
-factory UserModel.fromFirestore(DocumentSnapshot doc) {
-  final data = doc.data() as Map<String, dynamic>;
-  return UserModel(
-    uid: data['uid'] ?? '',
-    name: data['name'] ?? 'Anonymous',
-    role: data['role'] ?? 'resident',
-    status: data['status'] ?? 'pending',
-    photoUrl: data['photoUrl'],   // Nullable
-    societyId: data['societyId'], // Nullable
-  );
-}
-
-// Dart Object → Firestore
-Map<String, dynamic> toMap() => {
-  'uid': uid, 'name': name,
-  'role': role, 'status': status,
-  'photoUrl': photoUrl, 'societyId': societyId,
-};
+    ├── message: String
+    ├── severity: String            // "info" | "warning" | "sos"
+    ├── societyId: String
+    ├── createdBy: String
+    └── createdAt: Timestamp
 ```
 
 ---
@@ -353,13 +316,13 @@ App Launch → SplashScreen → FirebaseAuth.instance.currentUser?
     └── EXISTS ──► Check status & route
 ```
 
-### User Roles
+### User Roles & Permissions
 
-| Role | Status | Access |
+| Role | Status | Access Level |
 |---|---|---|
-| `resident` | `pending` | Pending Approval screen only |
-| `resident` | `approved` | Dashboard, Discussions, Events, Polls, Alerts |
-| `admin` | `approved` | All + Admin Panel, Create Events/Polls/Alerts, Approve Members |
+| `resident` | `pending` | Only the Pending Approval waiting screen |
+| `resident` | `approved` | Dashboard, Discussions, Events, Polls, Alerts (view & interact) |
+| `admin` | `approved` | All resident access + Admin Approvals Panel, Create Events, Create Polls, Broadcast SOS Alerts |
 
 ---
 
@@ -411,7 +374,7 @@ Copy the **SHA-1** → Firebase Console → Project Settings → Android App →
 flutter pub get
 ```
 
-### Step 5 — iOS only: Install CocoaPods
+### Step 5 — (iOS only) Install CocoaPods
 
 ```bash
 cd ios && pod install && cd ..
@@ -425,7 +388,7 @@ cd ios && pod install && cd ..
 flutter devices                        # List connected devices
 flutter run                            # Run on default device
 flutter run -d "iPhone 15 Pro"         # Run on iOS Simulator
-flutter run -d chrome                  # Run on Web
+flutter run -d chrome                  # Run on Web browser
 ```
 
 ---
@@ -433,10 +396,10 @@ flutter run -d chrome                  # Run on Web
 ## 🏗️ Build & Deployment
 
 ```bash
-# Debug APK
+# Debug APK (for quick testing)
 flutter build apk --debug
 
-# Release APK (for distribution)
+# Release APK (optimized, AOT compiled)
 flutter build apk --release
 
 # App Bundle (Google Play Store)
@@ -449,40 +412,32 @@ flutter build ios --release
 | Feature | Debug Build | Release Build |
 |---|---|---|
 | **Compilation** | JIT (Just-In-Time) | AOT (Ahead-Of-Time) |
-| **Performance** | Slower, debug symbols | Optimized, 60/120 FPS |
-| **File Size** | ~40–60 MB | ~15–25 MB |
-| **Code Security** | Readable | R8/ProGuard obfuscated |
-| **Signing** | `debug.keystore` | Custom `key.jks` required |
-
-### Android Permissions
-
-| Permission | Purpose |
-|---|---|
-| `INTERNET` | Firebase API & Firestore sync |
-| `CAMERA` | Capture photos for posts |
-| `READ_EXTERNAL_STORAGE` | Pick images from gallery |
+| **Performance** | Slower, debug symbols | Optimized, smooth 60/120 FPS |
+| **File Size** | ~40–60 MB | ~15–25 MB (tree-shaken) |
+| **Code Security** | Readable | R8 / ProGuard obfuscated |
+| **Signing** | `debug.keystore` | Custom production `key.jks` |
 
 ---
 
 ## 🎨 Design System
 
-Centralized Material 3 theme in [`lib/theme/app_theme.dart`](lib/theme/app_theme.dart).
+Prāngan features a **centralized Material 3 theme** in [`lib/theme/app_theme.dart`](lib/theme/app_theme.dart).
 
 ### Color Palette
 
 | Token | Hex | Usage |
 |---|---|---|
-| **Heritage Crimson** | `#86243A` | Primary brand color, AppBar |
+| **Heritage Crimson** | `#86243A` | Primary brand color, AppBar background |
 | **Primary Dark** | `#5B1625` | Pressed states, dark surfaces |
 | **Warm Gold** | `#DAB15C` | Accent, badges, highlights |
 | **Neutral Cream** | `#FAF7F2` | Scaffold background |
 | **Pure White** | `#FFFFFF` | Card & input surfaces |
-| **Emergency Red** | `#D32F2F` | SOS alert banners |
+| **Emergency Red** | `#D32F2F` | High-priority SOS alert banners |
 
 ### Typography
 
 - **Font:** [Outfit](https://fonts.google.com/specimen/Outfit) via `google_fonts`
-- All `TextTheme` styles globally configured — no ad-hoc inline styles
+- All text styles globally mapped in `TextTheme` for clean visual hierarchy across all devices.
 
 ---
 
